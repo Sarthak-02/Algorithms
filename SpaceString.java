@@ -1,5 +1,5 @@
 package String_Algo;
-
+//http://www.geeksforgeeks.org/print-possible-strings-can-made-placing-spaces/
 public class SpaceString {
 	static void spaceCombo(String s){
 		StringBuffer sb = new StringBuffer();
