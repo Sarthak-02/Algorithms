@@ -1,4 +1,4 @@
-package BitAlgorithm;
+//package BitAlgorithm;
 //To add two numbers without using Arithematic operator
 public class Add_two_numbers {
 
