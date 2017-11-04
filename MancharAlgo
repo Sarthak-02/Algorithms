@@ -1,0 +1,46 @@
+import java.util.*;
+
+public class MancherAlgo {
+	
+	static void mancher(char[] t) {
+		int[] p = new int[t.length];
+		int c=0;
+		int r=0;
+		for(int i=1;i<t.length-1;i++) {
+			int mirr = 2*c-i;
+			if(i<r) {
+				p[i] =  Math.min(r-i, p[mirr]);
+			}
+			
+			while(t[i+(1+p[i])] == t[i-(1+p[i])]) {
+				p[i]++;
+			}
+			if(i+p[i]>r) {
+				c=i;
+				r = 1+p[i];
+			}
+		}
+		
+		int max = 0;
+		for(int i=0;i<t.length-1;i++) {
+			if(max<p[i])
+				max = p[i];
+		}
+		System.out.println(max);
+	}
+	
+	public static void main(String[] args) {
+		String s = "adcbaba";
+		String t = "";
+		t=t+"$";
+		t=t+"#";
+		int j=0;
+		for(int i=0;i<s.length();i++) {
+			t=t+s.charAt(i);
+			t=t+"#";
+		}
+		t=t+"@";
+		System.out.println(t);
+		mancher(t.toCharArray());
+	}
+}
